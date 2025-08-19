@@ -117,6 +117,17 @@ ipython_config.py
 .pdm-python
 .pdm-build/
 
+
+# no need to upload these folders in github remote
+model_outputs/
+model_predictions/
+output_images/
+runs/
+stinkgbug_image_data/
+*.pt
+
+
+
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
 #pixi.lock

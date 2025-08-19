@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['stinkbug']
+
+roboflow:
+  workspace: iglab-precision-pest-management
+  project: saurav_upadhyaya_evaluating_stinkbug_images-r6wfa
+  version: 3
+  license: Private
+  url: https://app.roboflow.com/iglab-precision-pest-management/saurav_upadhyaya_evaluating_stinkbug_images-r6wfa/3
