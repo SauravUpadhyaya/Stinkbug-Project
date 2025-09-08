@@ -5,6 +5,15 @@ from PIL import Image
 import io
 from ultralytics import YOLO # Import YOLO from ultralytics
 
+import gspread
+from google.oauth2.service_account import Credentials
+import datetime
+
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
+creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scope)
+client = gspread.authorize(creds)
+
 # Set the title of the app
 st.title("Stinkbug Detection App")
 
@@ -98,3 +107,17 @@ if uploaded_file is not None and model is not None:
 
 # Add instructions on how to run locally (optional for cloud deployment but good for development)
 st.markdown("---")
+
+
+# Open your sheet
+sheet = client.open("Stinkbug-Counting-Logs").sheet1
+
+# Example data to log
+timestamp = str(datetime.datetime.now())
+user = st.text_input("Enter your name:")
+detection_count = num_detections  # or whatever logic you're using
+
+# Button to submit
+if st.button("Log Detection"):
+    sheet.append_row([timestamp, user, detection_count])
+    st.success("Logged successfully!")
