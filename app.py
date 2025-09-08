@@ -93,8 +93,8 @@ if uploaded_file is not None and model is not None:
 
     # Display the results
     if results_image_pil is not None:
-        st.image(results_image_pil, caption="Processed Image with Polygons", use_container_width=True)
-        st.subheader(f"Number of polygons detected: {num_detections}")
+        st.image(results_image_pil, caption="Redbanded Stinkbug Detection", use_container_width=True)
+        st.subheader(f"Number of redbanded stinkbugs detected: {num_detections}")
 
 # Add instructions on how to run locally (optional for cloud deployment but good for development)
 st.markdown("---")
