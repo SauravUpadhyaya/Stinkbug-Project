@@ -19,8 +19,8 @@ st.markdown("2. The app processes the image and displays the count of detected r
 uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg"])
 
 # Load the .pt model
-model_path = './saved_models_of_1008_images/yolov8s_best.pt' # Use the correct path provided in the context.
-
+# model_path = './saved_models_of_1008_images/yolov8s_best.pt' # Use the correct path provided in the context.
+model_path = 'saved_models/saved_models_thousand_eight_images/yolov8s_best.pt'
 model = None # Initialize model to None
 try:
     # Load the model using ultralytics
