@@ -1,8 +1,8 @@
 names: [stinkbug]
 nc: 1
-test: ./stinkbug_image_data/test/images
-test_labels: ./stinkbug_image_data/test/labels
-train: ./stinkbug_image_data/train/images
-train_labels: ./stinkbug_image_data/train/labels
-val: ./stinkbug_image_data/valid/images
-val_labels: ./stinkbug_image_data/valid/labels
+test: ./stinkbug_image_data_third_file/test/images
+test_labels: ./stinkbug_image_data_third_file/test/labels
+train: ./stinkbug_image_data_third_file/train/images
+train_labels: ./stinkbug_image_data_third_file/train/labels
+val: ./stinkbug_image_data_third_file/valid/images
+val_labels: ./stinkbug_image_data_third_file/valid/labels
