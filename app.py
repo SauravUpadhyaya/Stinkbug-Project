@@ -120,4 +120,4 @@ st.markdown("---")
 # # Button to submit
 # if st.button("Log Detection"):
 #     sheet.append_row([timestamp, user, detection_count])
-#     st.success("Logged successfully!")
+#     st.success("Logged successfully!")strs 
