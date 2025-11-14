@@ -18,7 +18,7 @@ from ultralytics import YOLO # Import YOLO from ultralytics
 st.title("Redbanded Stink Bug Detection")
 
 # Add user guidance
-st.markdown("GoaL: Get the total number of redbanded stink bugs in the uploaded image")
+st.markdown("Goal: Get the total number of redbanded stink bugs in the uploaded image")
 
 # st.markdown("##### How to Use:")
 # st.markdown("1. Upload a JPG image file using the file uploader below.")
