@@ -15,22 +15,24 @@ from ultralytics import YOLO # Import YOLO from ultralytics
 # client = gspread.authorize(creds)
 
 # Set the title of the app
-st.title("Stinkbug Detection App")
+st.title("Redbanded Stink Bug Detection")
 
 # Add user guidance
-st.markdown("This web application counts the total number of redbanded stinkbugs in the uploaded image and outlines the detected polygons.")
+st.markdown("GoaL: Get the total number of redbanded stink bugs in the uploaded image")
 
-st.markdown("##### How to Use:")
-st.markdown("1. Upload an image file (PNG, JPG, or JPEG) using the file uploader below.")
-st.markdown("2. The app processes the image and displays the count of detected redbanded stinkbugs.")
+# st.markdown("##### How to Use:")
+# st.markdown("1. Upload a JPG image file using the file uploader below.")
+# st.markdown("2. The app processes the image and displays the count of detected redbanded stinkbugs.")
 
 # Implement file upload
 uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg"])
 
 # Load the .pt model
 # model_path = './saved_models_of_1008_images/yolov8s_best.pt' # Use the correct path provided in the context.
-model_path = 'saved_models/saved_models_thousand_eight_images/yolov8s_best.pt'
+model_path = 'saved_models/saved_models_thousand_eight_images/yolov8m_cbam_asff_finetuned.pt'
 model = None # Initialize model to None
+
+
 try:
     # Load the model using ultralytics
     model = YOLO(model_path)
@@ -83,7 +85,7 @@ def process_image(uploaded_file, model):
             # The exact method for drawing depends on the results format.
             # Assuming results is an object with a .plot() method (common in Ultralytics YOLO)
             # which returns an image with detections drawn.
-            results_image_np = results[0].plot()
+            results_image_np = results[0].plot(labels=False)
 
             # Convert the result NumPy array back to a Pillow Image
             results_image_pil = Image.fromarray(results_image_np)
@@ -103,7 +105,7 @@ if uploaded_file is not None and model is not None:
     # Display the results
     if results_image_pil is not None:
         st.image(results_image_pil, caption="Redbanded Stinkbug Detection", use_container_width=True)
-        st.subheader(f"Number of redbanded stinkbugs detected: {num_detections}")
+        st.subheader(f"Total number of redbanded stink bugs detected: {num_detections}")
 
 # Add instructions on how to run locally (optional for cloud deployment but good for development)
 st.markdown("---")
