@@ -29,7 +29,7 @@ uploaded_file = st.file_uploader("Upload an image...", type=["png", "jpg", "jpeg
 
 # Load the .pt model
 # model_path = './saved_models_of_1008_images/yolov8s_best.pt' # Use the correct path provided in the context.
-model_path = 'saved_models/saved_models_thousand_eight_images/yolov8m_cbam_asff_finetuned.pt'
+model_path = './saved_models/saved_models_thousand_eight_images/yolov8m_cbam_asff_finetuned.pt'
 model = None # Initialize model to None
 
 
