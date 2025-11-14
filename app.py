@@ -73,7 +73,7 @@ def process_image(uploaded_file, model):
             # or can be adapted. If the model expects a different format (e.g., PyTorch tensor),
             # conversion will be needed here. YOLOv8 models from Ultralytics usually work with
             # PIL Images or NumPy arrays directly.
-            results = model(img_np)
+            results = model(img_np, conf =0.7)
 
             # Get the number of detected objects
             # Assuming results[0] contains the detection results
@@ -81,7 +81,7 @@ def process_image(uploaded_file, model):
             # You might need to adjust this based on whether your model outputs masks or boxes
             # For segmentation models, you might check len(results[0].masks)
 
-            # Process results and draw on the image
+            # Process results and draw on the imafge
             # The exact method for drawing depends on the results format.
             # Assuming results is an object with a .plot() method (common in Ultralytics YOLO)
             # which returns an image with detections drawn.
