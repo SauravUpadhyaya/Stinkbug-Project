@@ -1,0 +1,20 @@
+{
+  "model": "yolov8m_cbam_asff_finetuned.pt",
+  "metrics": {
+    "N_images": 151,
+    "MAE": 0.1390728476821192,
+    "RMSE": 0.453098237962843,
+    "ACA": 0.9864951768488746,
+    "DR@<=1": 0.9801324503311258
+  },
+  "baseline": {
+    "model": "./saved_models_of_1008_images/yolov8m_best.pt",
+    "metrics": {
+      "N_images": 151,
+      "MAE": 0.1390728476821192,
+      "RMSE": 0.4228568871614456,
+      "ACA": 0.9864951768488746,
+      "DR@<=1": 0.9801324503311258
+    }
+  }
+}
